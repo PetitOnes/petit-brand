@@ -59,7 +59,7 @@ Google Fonts: `https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@4
 
 ## 5. 公開している場所
 
-- SNS ぷちたち。: https://d3niumbwriyg7f.cloudfront.net/
+- SNS ぷちたち。: URL は公開しない(会った人に名刺で渡す)
 - きせかえ: https://teampuchi.github.io/kisekae/
 - 体のシミュレータ: https://teampuchi.github.io/petit-body-simulator/
 - PetitOnes の HP: https://rryz09.github.io/petit-one/
