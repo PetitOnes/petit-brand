@@ -64,7 +64,8 @@ Google Fonts: `https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@4
 - 体のシミュレータ: https://teampuchi.github.io/petit-body-simulator/
 - PetitOnes の HP: https://rryz09.github.io/petit-one/
 - 入口: https://lit.link/team-puchi
-- X: @PetitOnes / @ari_ac1d、#Petit_Ones
+- X: #Petit_Ones(2人がそれぞれの名前で書く。@PetitOnes は動いていない)
+- Instagram: https://www.instagram.com/petit_ones/
 
 ## 版
 
