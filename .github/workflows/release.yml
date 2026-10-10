@@ -1,0 +1,26 @@
+name: Release by version
+# main に push されたとき、VERSION を読み、その名前(v1.2.3)のタグが無ければ タグ + Release を作る。ページは GitHub Pages(main / root)。
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - id: ver
+        run: |
+          V="$(tr -d ' \n' < VERSION)"; test -n "$V"
+          grep -q "petit-brand tokens v$V" tokens.css || { echo "tokens.css の版 と VERSION ($V) が違います"; exit 1; }
+          echo "version=$V" >> "$GITHUB_OUTPUT"
+          if git ls-remote --exit-code --tags origin "refs/tags/v$V" >/dev/null 2>&1; then echo "new_release=false" >> "$GITHUB_OUTPUT"; else echo "new_release=true" >> "$GITHUB_OUTPUT"; fi
+      - if: steps.ver.outputs.new_release == 'true'
+        env: { GH_TOKEN: "${{ github.token }}", V: "${{ steps.ver.outputs.version }}" }
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag "v$V"; git push origin "v$V"
+          gh release create "v$V" --title "petit-brand v$V" --notes "ぷちの見た目(名前・色・書体・顔)の版 v$V。tokens.css と assets/ を同梱。" tokens.css brand.md

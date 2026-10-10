@@ -1,0 +1,31 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="version" content="1.0.0"><title>petit-brand — ぷちの見た目</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<style>
+body{margin:0;background:var(--pt-paper);color:var(--pt-ink);font-family:var(--pt-font-body);padding:24px 16px 48px;line-height:1.7}
+main{max-width:880px;margin:0 auto}h1,h2{font-family:var(--pt-font-round)}h1{font-size:1.5rem;margin:0 0 4px}h2{font-size:1.1rem;margin:28px 0 10px;color:var(--pt-teal-ink)}
+.band{height:10px;width:140px;background:var(--pt-band);border-radius:4px;margin:10px 0 18px}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.c{border:1px solid var(--pt-panel);border-radius:var(--pt-radius-card);overflow:hidden;background:#fff}
+.c i{display:block;height:56px}.c b{display:block;font-family:var(--pt-font-round);font-size:.9rem;padding:6px 10px 0}.c code{display:block;font-family:var(--pt-font-mono);font-size:.78rem;color:var(--pt-ink-soft);padding:0 10px 8px}
+.t p{margin:6px 0}.r{font-family:var(--pt-font-round)}.s{font-family:var(--pt-font-serif)}
+.faces{display:flex;gap:14px;flex-wrap:wrap}.faces img{width:120px;height:120px}
+footer{margin-top:36px;color:var(--pt-ink-soft);font-size:.85rem}
+</style></head><body><main>
+<h1>petit-brand — ぷちの見た目 <small id="ver" style="font-weight:400;color:var(--pt-ink-soft);font-size:.8rem"></small></h1>
+<div class="band"></div>
+<p>名前の表記・色・書体・顔の正本。値は <a href="tokens.css">tokens.css</a>、説明は <a href="brand.md">brand.md</a>。ぷちは PetitOnes(ありさん)のプロジェクトです。</p>
+<h2>色</h2>
+<div class="sw" id="sw"></div>
+<h2>書体</h2>
+<div class="t"><p class="r"><b>見出し・ボタン・名札</b> M PLUS Rounded 1c — ぷちたち。 まいぷち。 ちーむぷち</p><p><b>画面の本文</b> Noto Sans JP — 話しかけても、話しかけなくても。</p><p class="s"><b>紙の本文・詩</b> Noto Serif JP — 目をもらった朝、わたしは知った。</p></div>
+<h2>顔(線画)</h2>
+<div class="faces"><img src="assets/face/puchiteya.svg" alt="ぷちてゃ"><img src="assets/face/puchiko.svg" alt="ぷちこ"><img src="assets/face/puchiru.svg" alt="ぷちる"><img src="assets/face/mio.svg" alt="澪"></div>
+<footer>PetitOnes / ちーむぷち。main に入ると CI がタグと Release を作る。</footer>
+</main>
+<script>
+const V=[['paper','紙'],['panel','へこんだ面'],['ink','文字'],['ink-soft','薄い文字'],['coral','人の操作'],['coral-soft','coral 淡'],['teal','ぷちの側'],['teal-soft','teal 淡'],['petit-blue','既定の顔色'],['puchiteya','ぷちてゃ'],['puchiko','ぷちこ'],['puchiru','ぷちる']];
+const cs=getComputedStyle(document.documentElement);const sw=document.getElementById('sw');
+for(const [k,n] of V){const v=cs.getPropertyValue('--pt-'+k).trim();const d=document.createElement('div');d.className='c';d.innerHTML=`<i style="background:${v}"></i><b>${n}</b><code>--pt-${k} ${v}</code>`;sw.appendChild(d);}
+document.getElementById('ver').textContent='v'+document.querySelector('meta[name=version]').content;
+</script></body></html>

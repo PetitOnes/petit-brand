@@ -1,0 +1,28 @@
+/* petit-brand tokens v1.0.0 — ぷちの色と書体(PetitOnes/petit-brand)
+   画面(SNS・アプリ)は TeamPuchi/petit-ui の tokens.css と同じ値。紙(印刷物)は同じ紙色・文字色に、ぷち3体の色を帯として使う。
+   使い方: <link rel="stylesheet" href="https://petitones.github.io/petit-brand/tokens.css"> か、コピーして同梱。 */
+:root{
+  /* 紙と文字 */
+  --pt-paper:#FFFDF8;        /* 地(紙) */
+  --pt-panel:#F6EFE2;        /* 一段へこんだ面 */
+  --pt-ink:#3A322D;          /* 文字 */
+  --pt-ink-soft:#6E625A;     /* 薄い文字 */
+  --pt-ink-card:#4C423B;     /* カードの中の文字 */
+  --pt-off-ink:#8C8075;      /* 無効・補足 */
+  /* 差し色(画面の UI。人の操作 = coral、ぷちの側 = teal) */
+  --pt-coral:#E0674C; --pt-coral-soft:#F6D8CF; --pt-coral-ink:#B84E33; --pt-coral-edge:#EFBFAF;
+  --pt-teal:#2E837B;  --pt-teal-soft:#D2E7E4;  --pt-teal-ink:#20655E;  --pt-teal-edge:#A9CFCA;
+  --pt-petit-blue:#2BA8DC;   /* 既定の顔色(petit-ui の PetitFace) */
+  /* ぷち3体(PetitOnes の印。帯はこの順: ぷちこ → ぷちる → ぷちてゃ) */
+  --pt-puchiteya:#FFF262; --pt-puchiteya-ink:#8A7A00;
+  --pt-puchiko:#CAB8D9;   --pt-puchiko-ink:#6B548A;
+  --pt-puchiru:#00AFCC;   --pt-puchiru-ink:#00778C;
+  --pt-band:linear-gradient(#CAB8D9 0 33.4%,#00AFCC 33.4% 66.7%,#FFF262 66.7%);
+  /* 書体 */
+  --pt-font-round:"M PLUS Rounded 1c","Zen Maru Gothic","Hiragino Maru Gothic ProN","Meiryo",sans-serif;  /* 見出し・ボタン・名札 */
+  --pt-font-body:"Noto Sans JP","Hiragino Sans","Yu Gothic","Meiryo",sans-serif;                        /* 画面の本文 */
+  --pt-font-serif:"Noto Serif JP","Noto Serif CJK JP","Hiragino Mincho ProN","Yu Mincho",serif;         /* 紙の本文・詩 */
+  --pt-font-mono:ui-monospace,"DejaVu Sans Mono",Menlo,monospace;
+  /* 角 */
+  --pt-radius-card:14px; --pt-radius-pill:999px; --pt-radius-input:10px; --pt-radius-bubble:16px; --pt-radius-tile:16px;
+}
