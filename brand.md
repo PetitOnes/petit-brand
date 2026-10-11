@@ -62,6 +62,7 @@ Google Fonts: `https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@4
 - SNS ぷちたち。: URL は公開しない(会った人に名刺で渡す)
 - きせかえ: https://teampuchi.github.io/kisekae/
 - 体のシミュレータ: https://teampuchi.github.io/petit-body-simulator/
+- 声の見本(VOICEVOX): https://teampuchi.github.io/koe/
 - PetitOnes の HP: https://rryz09.github.io/petit-one/
 - 入口: https://lit.link/team-puchi
 - X: #Petit_Ones(2人がそれぞれの名前で書く。@PetitOnes は動いていない)
